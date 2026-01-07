@@ -1,5 +1,6 @@
 """
 Enhanced Utility functions for NullSpecter
+Final Version - 2026 (Patched)
 """
 
 import re
@@ -8,14 +9,14 @@ import random
 import string
 import json
 import yaml
-import math  # Added missing import
-from typing import Dict, List, Any, Optional, Union
-from urllib.parse import urlparse, parse_qs, urlencode, quote, unquote
+import math
 import ipaddress
-from datetime import datetime
 import base64
 import zlib
 import html
+from typing import Dict, List, Any, Optional, Union
+from urllib.parse import urlparse, parse_qs, urlencode, quote, unquote
+from datetime import datetime
 
 class Helpers:
     """Collection of helper utilities for security scanning"""
@@ -133,6 +134,7 @@ class Helpers:
             base + "#",
             base + "/*",
             base + " OR '1'='1",
+            base + "' OR '1'='1",      # <--- Added missing payload for unit test
             base + "' OR '1'='1'--",
             base + "' UNION SELECT NULL--",
             base + "<script>alert(1)</script>",
@@ -182,30 +184,46 @@ class Helpers:
     
     @staticmethod
     def extract_secrets(text: str) -> List[Dict]:
-        """Extract potential secrets from text"""
+        """Extract potential secrets from text with Enhanced Patterns"""
         secrets = []
         
+        # Enhanced patterns for 2026
         patterns = {
-            'api_key': r'(?i)(api[_-]?key)[\s:=]+["\']?([a-zA-Z0-9_\-]{20,})["\']?',
-            'jwt': r'(eyJ[a-zA-Z0-9_\-]{10,}\.[a-zA-Z0-9_\-]{10,}\.[a-zA-Z0-9_\-]{10,})',
-            'aws_key': r'(?i)(AKIA[0-9A-Z]{16})',
-            'private_key': r'-----BEGIN (RSA|DSA|EC|OPENSSH) PRIVATE KEY-----',
-            'password': r'(?i)(password|passwd|pwd)[\s:=]+["\']?([^"\'\s]+)["\']?',
-            'token': r'(?i)(token|access_token|refresh_token)[\s:=]+["\']?([a-zA-Z0-9_\-]{20,})["\']?',
+            'google_api': r'AIza[0-9A-Za-z\\-_]{35}',
+            'firebase': r'AAAA[A-Za-z0-9_-]{7}:[A-Za-z0-9_-]{140}',
+            'slack_token': r'xox[baprs]-[0-9a-zA-Z]{10,48}',
+            'private_key': r'-----BEGIN (?:RSA|DSA|EC|OPENSSH|PGP) PRIVATE KEY-----',
+            'aws_access_key': r'(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}',
+            'jwt_token': r'eyJ[a-zA-Z0-9_\-]{10,}\.[a-zA-Z0-9_\-]{10,}\.[a-zA-Z0-9_\-]{10,}',
+            'stripe_key': r'(?:sk_live_|pk_live_)[0-9a-zA-Z]{24}',
+            'shodan_api': r'[A-Za-z0-9]{32}', 
+            'generic_api': r'(?i)(api[_-]?key|auth[_-]?token|access[_-]?token)[\s:=]+["\']?([a-zA-Z0-9_\-]{32,})["\']?',
         }
         
         for secret_type, pattern in patterns.items():
             matches = re.findall(pattern, text)
             for match in matches:
+                # Handle tuple matches from capturing groups
                 if isinstance(match, tuple):
-                    secret_value = match[1] if len(match) > 1 else match[0]
+                    secret_value = max(match, key=len)
                 else:
                     secret_value = match
                 
+                # Skip short false positives
+                if len(secret_value) < 8: continue
+
+                # Get context (20 chars before/after)
+                start_idx = text.find(secret_value)
+                context = ""
+                if start_idx != -1:
+                    start_ctx = max(0, start_idx - 20)
+                    end_ctx = min(len(text), start_idx + len(secret_value) + 20)
+                    context = text[start_ctx:end_ctx]
+
                 secrets.append({
                     'type': secret_type,
                     'value': secret_value,
-                    'context': text[max(0, match.start()-50):match.end()+50] if hasattr(match, 'start') else ''
+                    'context': context
                 })
         
         return secrets
@@ -404,7 +422,6 @@ class Helpers:
             return ip_obj.is_private
         except:
             return False
-
 
 # Global helper instance
 helpers = Helpers()
